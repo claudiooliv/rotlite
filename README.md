@@ -2,7 +2,7 @@
 
 
 ```
-@Table(name = "tabela")
+@Table(name = "tabela", endpoint = "")
 public class ObjectModel extends RotLiteObject {
 
     public ObjectModel(Context context) {
@@ -28,6 +28,41 @@ try {
 }
 ```
 
+## Inserindo dados na WEB e no dispositivo ##
+
+
+```
+ObjectModel model = new ObjectModel(context);
+model.put("column","value");
+model.put("column2", 1);
+
+try {
+    model.saveLocal();
+    model.saveWeb(new Callback() {
+
+                    @Override
+                    public void onFailure(Request request, IOException e) {
+                        Log.e("RotLite", "Failure request: " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onResponse(Response response) throws IOException {
+                        if (response.isSuccessful()) {
+
+                            String responseStr = response.body().string();
+                            Log.v("RotLite", "Response: " + responseStr);
+
+                        } else {
+                            Log.e("RotLite", "Response error: " + response.message());
+                        }
+                    }
+
+                });
+
+}catch(Exception e) {
+    e.printStackTrace();
+}
+```
 
 ## Buscando todos dados da tabela ##
 
