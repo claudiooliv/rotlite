@@ -11,7 +11,22 @@ public class ObjectModel extends RotLiteObject {
 
 }
 ```
+## AndroidManifest.xml ##
 
+```
+<application>
+ ...
+ 
+<meta-data
+            android:name="rotlite_dbname"
+            android:value="rotlite" />
+<meta-data
+    android:name="rotlite_server"
+    android:value="WEBSERVICE_URL" />
+    
+ ...
+</application>
+```
 
 ## Inserindo dados ##
 
