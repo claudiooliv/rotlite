@@ -6,4 +6,4 @@ Leia mais em https://github.com/claudiooliv/rotlite/wiki
 
 ## Histórico de versões
 
-*0.9.2* - Adicionada a classe RotLiteQuery para consulta dos dados, separando todos os métodos de consulta que antes eram realizados diretamente no modelo.
+_0.9.2_ - Adicionada a classe RotLiteQuery para consulta dos dados, separando todos os métodos de consulta que antes eram realizados diretamente no modelo.
