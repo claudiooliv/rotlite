@@ -1,1 +1,2 @@
-include ':rotlite'
+include ':app',':rotlitelib'
+project(':rotlitelib').projectDir = new File(settingsDir, '../Rotlite/rotlite/rotlite')
